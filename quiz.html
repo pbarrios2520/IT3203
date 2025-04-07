@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="quiz.js"></script>
+</head>
+<body>
+
+    <!-- This is the Website Header Section -->
+    <header id="header">
+        <h1>Web Technology Quiz</h1>
+
+        <!-- This is the navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="topic1.html">Topic 1</a></li>
+                <li><a href="topic2.html">Topic 2</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- Main Content Section -->
+    <main class="content">
+        <h2>Self-Assessment Quiz</h2>
+
+        <!-- Quiz Form -->
+        <form id="quizForm">
+            <!-- Question 1 (Multiple Choice) -->
+            <p>1. What does HTTP stand for?</p>
+            <label><input type="radio" name="q1" value="a"> HyperText Transfer Protocol</label><br>
+            <label><input type="radio" name="q1" value="b"> High Transfer Text Program</label><br>
+            <label><input type="radio" name="q1" value="c"> Hyperlink Tag Protocol</label><br>
+
+            <!-- Question 2 (Multiple Choice) -->
+            <p>2. Which year was JavaScript introduced?</p>
+            <label><input type="radio" name="q2" value="a"> 1993</label><br>
+            <label><input type="radio" name="q2" value="b"> 1995</label><br>
+            <label><input type="radio" name="q2" value="c"> 1999</label><br>
+
+            <!-- Question 3 (Multiple Choice) -->
+            <p>3. Which browser was one of the first to support HTTP?</p>
+            <label><input type="radio" name="q3" value="a"> Google Chrome</label><br>
+            <label><input type="radio" name="q3" value="b"> Netscape Navigator</label><br>
+            <label><input type="radio" name="q3" value="c"> Safari</label><br>
+
+            <!-- Question 4 (Fill in the Blank) -->
+            <p>4. Fill in the blank: HTTP/1.0 introduced the use of ___________ to describe content.</p>
+            <input type="text" name="q4" placeholder="Your answer here"><br>
+
+            <!-- Question 5 (Multiple Select) -->
+            <p>5. Select all features of HTTP/1.0:</p>
+            <label><input type="checkbox" name="q5" value="a"> Metadata headers</label><br>
+            <label><input type="checkbox" name="q5" value="b"> Built-in encryption</label><br>
+            <label><input type="checkbox" name="q5" value="c"> Basic caching</label><br>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="restartQuiz()">Restart</button>
+        </form>
+
+        <!-- Shows the results -->
+        <div id="result" style="margin-top: 20px;"></div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Patrick Barrios. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let score = 0;
+            let resultText = "";
+
+            // Question 1
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            if (q1 && q1.value === "a") {
+                score++;
+                resultText += "<p>Q1: Correct!</p>";
+            } else {
+                resultText += "<p>Q1: Incorrect. Correct answer: HyperText Transfer Protocol</p>";
+            }
+
+            // Question 2
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            if (q2 && q2.value === "b") {
+                score++;
+                resultText += "<p>Q2: Correct!</p>";
+            } else {
+                resultText += "<p>Q2: Incorrect. Correct answer: 1995</p>";
+            }
+
+            // Question 3
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            if (q3 && q3.value === "b") {
+                score++;
+                resultText += "<p>Q3: Correct!</p>";
+            } else {
+                resultText += "<p>Q3: Incorrect. Correct answer: Netscape Navigator</p>";
+            }
+
+            // Question 4
+            const q4 = document.querySelector('input[name="q4"]').value.trim().toLowerCase();
+            if (q4 === "headers") {
+                score++;
+                resultText += "<p>Q4: Correct!</p>";
+            } else {
+                resultText += "<p>Q4: Incorrect. Correct answer: headers</p>";
+            }
+
+            // Question 5 (Multi-select)
+            const q5 = Array.from(document.querySelectorAll('input[name="q5"]:checked')).map(cb => cb.value);
+            const correctQ5 = ["a", "c"];
+            const isCorrectQ5 = correctQ5.every(ans => q5.includes(ans)) && q5.length === 2;
+
+            if (isCorrectQ5) {
+                score++;
+                resultText += "<p>Q5: Correct!</p>";
+            } else {
+                resultText += "<p>Q5: Incorrect. Correct answers: Metadata headers, Basic caching</p>";
+            }
+
+            // Shows the results
+            resultText += `<h3>Your Score: ${score}/5</h3>`;
+            resultText += `<h3>${score > 3 ? "✅ Pass" : "❌ Fail"}</h3>`;
+            document.getElementById("result").innerHTML = resultText;
+        });
+
+        function restartQuiz() {
+            document.getElementById("quizForm").reset();
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
