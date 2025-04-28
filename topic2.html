@@ -1,64 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This is the meta information for the character encoding and viewport settings. -->
+    <!-- Meta information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- This part is the page title seen on the browser tab -->
-    <title>Topic 2 - The Expansion of the Web and HTTP/1.0</title>
-    
-    <!-- Links the external stylesheet for consistent styling -->
+    <title>Topic 2 - HTTP/1.1 and Beyond</title>
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-
-    <!-- This part is the website header which has the main title and navigation menu -->
+    <!-- Website Header -->
     <header>
-        <h1>The Expansion of the Web and HTTP/1.0</h1>
-        
-        <!-- This is the navigation menu to make it easier to access the different pages -->
+        <h1>The Evolution of HTTP: HTTP/1.1 and Modern Web Standards</h1>
         <nav>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="topic1.html">Topic 1</a></li>
-              <li><a href="topic2.html">Topic 2</a></li>
-              <li><a href="references.html">References</a></li>
-              <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="topic1.html">Topic 1</a></li>
+                <li><a href="topic2.html">Topic 2</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
             </ul>
-          </nav>             
+        </nav>
     </header>
 
-    <!-- Main content section which has the article on HTTP/1.0 -->
+    <!-- Main Content Section -->
     <main>
-        <h2>The Expansion of the Web and HTTP/1.0</h2>
-        
-        <!--  This is the introduction paragraph that explains the transition from HTTP/0.9 to HTTP/1.0 -->
+        <h2>Scalability and the Arrival of HTTP/1.1</h2>
+        <!-- This paragraph discusses how HTTP/1.1 improved web scalability -->
         <p>
-            As the web grew, it became visible that HTTP/0.9 had some problems. When HTTP/1.0 came out in 1996, 
-            it was a big deal because it added a lot of important features that changed the web from an easy way 
-            to share documents to a place where people could interact with each other and find resources.
+            As the web grew very quickly, it became hard to scale and perform efficiently. HTTP/1.0 had limitations that made communication slow and inefficient for bigger sites. When HTTP/1.1 was introduced in 1997, it solved many of these problems. It allowed persistent connections, meaning that browsers and servers could reuse the same connection for multiple requests and responses, reducing delays.
+        </p>
+        <p>
+            HTTP/1.1 also introduced chunked transfer encoding, allowing servers to send data in smaller, manageable pieces instead of waiting to compile a full response. This upgrade made websites faster, especially for streaming video and handling large datasets. It also let servers choose the best response language or format for users based on their browser capabilities.
         </p>
 
-        <!-- Info about HTTP/1.0 headers and their impact -->
+        <h2>The Modern Web: HTTP/2 and Beyond</h2>
+        <!-- This paragraph discusses HTTP/2 and new improvements -->
         <p>
-            Back when HTTP/1.0 was introduced, it came with metadata headers that gave users a lot more flexibility. 
-            These headers could specify things like the type of content being shared and enable caching, which not 
-            only improved the user experience but also took some of the strain off servers.
+            With the rise of mobile devices and data-heavy applications, HTTP/2 was developed to meet modern demands. Officially released in 2015, HTTP/2 introduced features like two-way multiplexing, allowing multiple requests and responses to travel over a single connection at once, improving speed and efficiency. 
+        </p>
+        <p>
+            Modern technology continued to evolve with HTTP/3 and the QUIC protocol, aiming for faster and safer web experiences by reducing setup time and improving encryption automatically. This shows how web standards constantly adapt to make the internet quicker and more secure for users everywhere.
         </p>
 
-        <!-- This part mentions the rise of commercial web browsers -->
+        <h2>Conclusion</h2>
+        <!-- This is the conclusion that wraps up the research -->
         <p>
-            Around the same time, we saw the launch of the first commercial web browsers, like Netscape Navigator, 
-            which helped make the web even more popular. Users could discover websites with lots of multimedia because 
-            HTTP and browsers worked well together.
+            The evolution of HTTP has helped the web become more efficient, flexible, and secure. From the simple beginnings of HTTP/0.9 to the advanced features of HTTP/2 and HTTP/3, each version has addressed new challenges and made the web a better place for communication and innovation.
         </p>
     </main>
 
-    <!-- Footer section showing copyright information -->
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Patrick Barrios. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
